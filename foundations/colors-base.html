@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Base & Canvas" subtitle="Ivory page + warm-white sections" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px; background: #fff; }
+  .row { display: flex; gap: 16px; }
+  .sw { flex: 1; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; }
+  .chip { height: 70px; }
+  .meta { padding: 10px 12px; font-family: var(--font-body); }
+  .name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .hex { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--ivory)"></div><div class="meta"><div class="name">Ivory · canvas</div><div class="hex">#FAF7F0 · --ivory</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--warm-white)"></div><div class="meta"><div class="name">Warm white · sections</div><div class="hex">#F3EDE2 · --warm-white</div></div></div>
+    <div class="sw"><div class="chip" style="background:#fff"></div><div class="meta"><div class="name">Card surface</div><div class="hex">#FFFFFF · --surface-card</div></div></div>
+  </div>
+</body>
+</html>

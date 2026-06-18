@@ -1,0 +1,21 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Display Scale" subtitle="Serif headline scale — H1 hero down to H4" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: #fff; }
+  .item { display: flex; align-items: baseline; gap: 18px; padding: 6px 0; border-bottom: 1px solid var(--border-subtle); }
+  .item:last-child { border-bottom: none; }
+  .tag { flex: 0 0 90px; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+  .demo { font-family: var(--font-display); color: var(--ink); font-weight: 500; line-height: 1.1; }
+</style>
+</head>
+<body>
+  <div class="item"><div class="tag">H1 · hero</div><div class="demo" style="font-size:clamp(2.4rem,4vw,3.4rem)">Wearable art</div></div>
+  <div class="item"><div class="tag">H2 · section</div><div class="demo" style="font-size:2.4rem">Painted by hand</div></div>
+  <div class="item"><div class="tag">H3</div><div class="demo" style="font-size:1.9rem">Featured collections</div></div>
+  <div class="item"><div class="tag">H4</div><div class="demo" style="font-size:1.5rem">The philosophy</div></div>
+</body>
+</html>

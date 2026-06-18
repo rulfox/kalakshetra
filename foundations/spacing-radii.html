@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Corner Radii" subtitle="Restrained — near-square edges read as luxury" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: #fff; font-family: var(--font-body); }
+  .row { display: flex; gap: 22px; align-items: flex-end; }
+  .col { text-align: center; }
+  .box { width: 72px; height: 56px; background: var(--warm-white); border: 1px solid var(--gold-hairline); }
+  .t { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+  .pill { width: 96px; height: 36px; background: var(--warm-white); border: 1px solid var(--gold-hairline); border-radius: var(--radius-pill); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="col"><div class="box" style="border-radius:var(--radius-sm)"></div><div class="t">sm · 2px</div></div>
+    <div class="col"><div class="box" style="border-radius:var(--radius-md)"></div><div class="t">md · 4px (cards/inputs)</div></div>
+    <div class="col"><div class="box" style="border-radius:var(--radius-lg)"></div><div class="t">lg · 8px</div></div>
+    <div class="col"><div class="pill"></div><div class="t">pill (tags, float)</div></div>
+  </div>
+</body>
+</html>
