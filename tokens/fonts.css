@@ -1,6 +1,13 @@
 /* Kalakshetra Handpaintings — Webfonts
    Headings: Cormorant Garamond (elegant heritage serif)
    Body/UI:  Inter (clean neutral sans)
-   NOTE: loaded from Google Fonts CDN. If you need fully offline/self-hosted
-   binaries, download the families and replace this with local @font-face rules. */
+
+   PERFORMANCE NOTE: The website HTML template (ui_kits/website/index.html)
+   loads these fonts via <link rel="preconnect"> + <link rel="stylesheet">
+   in the <head> for non-render-blocking loading. This @import is kept as
+   a fallback for design-system consumers who link styles.css directly
+   without the optimised HTML template.
+
+   For self-hosted/offline binaries, download the families and replace
+   with local @font-face rules. */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');

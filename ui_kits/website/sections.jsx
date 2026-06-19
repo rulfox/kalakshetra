@@ -156,7 +156,7 @@ function HowToOrder() {
     { n: '03', t: 'We paint & ship', d: 'Your piece is hand-painted and sent — India & worldwide, COD / UPI / bank.' },
   ];
   return (
-    <section style={{ ...section, background: 'var(--surface-page)' }}>
+    <section id="how-to-order" style={{ ...section, background: 'var(--surface-page)' }}>
       <div style={wrap}>
         <SectionHeading align="center" eyebrow="How to Order" title="A conversation, not a checkout"
           style={{ marginBottom: 'var(--space-7)' }} />
@@ -180,7 +180,7 @@ function HowToOrder() {
 /* ---------------------------- FOOTER ---------------------------- */
 function Footer() {
   return (
-    <footer id="contact" style={{ background: 'var(--ink)', color: 'var(--on-dark)', paddingTop: 'var(--space-9)' }}>
+    <footer id="contact" role="contentinfo" style={{ background: 'var(--ink)', color: 'var(--on-dark)', paddingTop: 'var(--space-9)' }}>
       <div style={{ ...wrap, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px,1fr))', gap: 'var(--space-7)', paddingBottom: 'var(--space-8)' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', gridColumn: '1 / -1', maxWidth: 420 }}>
           <Wordmark tone="light" size="lg" as="div" />
@@ -188,8 +188,17 @@ function Footer() {
             Hand-painted wearable art from Mavelikkara, Alappuzha, Kerala. Made to order, one of a kind.
           </p>
         </div>
-        <FooterCol title="Explore" links={['Shop', 'Lookbook', 'Our Story', 'How to Order']} />
-        <FooterCol title="Reach us" links={['WhatsApp · 9400384167', 'Call · 8547516011', '@kalakshetra_handpaintings']} />
+        <FooterCol title="Explore" links={[
+          { text: 'Shop', href: '#shop' },
+          { text: 'Lookbook', href: '#lookbook' },
+          { text: 'Our Story', href: '#story' },
+          { text: 'How to Order', href: '#how-to-order' }
+        ]} />
+        <FooterCol title="Reach us" links={[
+          { text: 'WhatsApp · 9400384167', href: 'https://wa.me/919400384167', external: true },
+          { text: 'Call · 8547516011', href: 'tel:+918547516011' },
+          { text: '@kalakshetra_handpaintings', href: 'https://www.instagram.com/kalakshetra_handpaintings/', external: true }
+        ]} />
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>Newsletter</span>
           <NewsletterForm tone="dark" />
@@ -210,12 +219,12 @@ function Footer() {
 }
 function FooterCol({ title, links }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+    <nav aria-label={title} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
       <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)' }}>{title}</span>
       {links.map((l) => (
-        <a key={l} href="#" style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-sm)', color: 'var(--on-dark-soft)' }}>{l}</a>
+        <a key={l.text} href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-sm)', color: 'var(--on-dark-soft)', textDecoration: 'none' }}>{l.text}</a>
       ))}
-    </div>
+    </nav>
   );
 }
 

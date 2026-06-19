@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /tokens/
+Disallow: /components/
+Disallow: /foundations/
+Disallow: /_ds_bundle.js
+Disallow: /_ds_manifest.json
+
+# Sitemap
+Sitemap: https://kalakshetrahandpaintings.com/sitemap.xml
