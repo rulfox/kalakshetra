@@ -63,6 +63,71 @@ function Philosophy() {
   );
 }
 
+/* ---------------------- CUSTOM COMMISSION ----------------------- */
+function CustomCommissionBanner() {
+  const waMsg = encodeURIComponent("Hi Kalakshetra, I'd like to commission a custom hand-painted piece. Here's what I have in mind:");
+  const waUrl = `https://wa.me/919400384167?text=${waMsg}`;
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div style={{
+      position: 'relative', overflow: 'hidden',
+      background: 'linear-gradient(135deg, #2a1a0e 0%, #5C4033 55%, #3a2010 100%)',
+      borderRadius: 'var(--radius-md)', padding: 'var(--space-7)',
+      marginBottom: 'var(--space-7)',
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      flexWrap: 'wrap', gap: 'var(--space-6)',
+      boxShadow: '0 8px 32px rgba(28,26,23,0.18)',
+    }}>
+      {/* top & bottom gold rule */}
+      <div style={{ position: 'absolute', top: 0, left: '8%', right: '8%', height: '1.5px', background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: '8%', right: '8%', height: '1.5px', background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)' }} />
+      {/* faint gold wash */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,162,39,0.12), transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0.85rem', position: 'relative' }}>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+          fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600,
+          letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)' }}>
+          <span style={{ width: 24, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
+          Custom Commission
+        </span>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 3vw, 2.5rem)',
+          fontWeight: 500, color: '#FAF7F0', margin: 0, lineHeight: 1.08, letterSpacing: '-0.01em' }}>
+          Commission Your Own
+        </h3>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-body)', lineHeight: 1.7,
+          color: 'rgba(250,247,240,0.78)', margin: 0, maxWidth: '54ch' }}>
+          Any motif — Kathakali, Theyyam, a deity, a peacock, or a memory entirely your own — hand-painted onto your choice of shirt, saree, kurta or kids' wear, made to order just for you.
+        </p>
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-sm)', fontStyle: 'italic', color: 'rgba(201,162,39,0.75)' }}>
+          Share your idea, fabric and size on WhatsApp — we'll paint it by hand.
+        </span>
+      </div>
+      <div style={{ position: 'relative', flexShrink: 0 }}>
+        <a href={waUrl} target="_blank" rel="noopener noreferrer"
+          aria-label="Request a custom hand-painted piece on WhatsApp"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.55rem',
+            padding: '0.95rem 1.9rem',
+            fontFamily: 'var(--font-body)', fontSize: '0.78rem', fontWeight: 600,
+            letterSpacing: '0.13em', textTransform: 'uppercase', textDecoration: 'none',
+            borderRadius: 'var(--radius-pill)',
+            background: hovered ? '#B8860B' : 'var(--gold)',
+            color: '#1C1A17',
+            boxShadow: hovered ? '0 8px 24px rgba(201,162,39,0.45)' : '0 4px 16px rgba(201,162,39,0.25)',
+            transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+            transition: 'all 0.22s cubic-bezier(0.25,0.46,0.45,0.94)',
+            whiteSpace: 'nowrap',
+          }}>
+          <WhatsAppGlyph size={16} />
+          Request a Custom Piece
+        </a>
+      </div>
+    </div>
+  );
+}
+
 /* ----------------------------- SHOP ----------------------------- */
 const PRODUCTS = [
   { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green', swatch: 'linear-gradient(150deg,#1F5F5B,#5C4033)' },
@@ -98,6 +163,7 @@ function Shop() {
             );
           })}
         </div>
+        <CustomCommissionBanner />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: 'var(--space-6)' }}>
           {list.map((p) => (
             <ProductCard key={p.name} name={p.name} theme={p.theme} category={p.category}
