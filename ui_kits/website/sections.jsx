@@ -2,8 +2,8 @@
    Composes the design-system primitives from window.<Namespace>. */
 const KS = window.KalakshetraHandpaintingsDesignSystem_6971f4;
 const { NavBar, Wordmark, WhatsAppButton, WhatsAppGlyph, Button, IconButton,
-        Tag, StatPill, SectionHeading, PullQuote, ProductCard, Lookbook,
-        NewsletterForm, Input } = KS;
+  Tag, StatPill, SectionHeading, PullQuote, ProductCard, Lookbook,
+  NewsletterForm, Input } = KS;
 
 const wrap = { maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--gutter)' };
 const section = { padding: 'var(--space-9) 0' };
@@ -11,23 +11,33 @@ const section = { padding: 'var(--space-9) 0' };
 /* ----------------------------- HERO ----------------------------- */
 function Hero() {
   return (
-    <header id="top" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end',
-      background: 'linear-gradient(160deg, #2E3A59 0%, #5C4033 45%, #8B2E2E 100%)', overflow: 'hidden' }}>
+    <header id="top" style={{
+      position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end',
+      background: 'linear-gradient(160deg, #2E3A59 0%, #5C4033 45%, #8B2E2E 100%)', overflow: 'hidden'
+    }}>
       {/* painterly wash */}
-      <div style={{ position: 'absolute', inset: 0, background:
-        'radial-gradient(120% 90% at 75% 15%, rgba(201,162,39,0.35), transparent 55%), radial-gradient(80% 70% at 15% 90%, rgba(31,95,91,0.45), transparent 60%)' }} />
+      <div style={{
+        position: 'absolute', inset: 0, background:
+          'radial-gradient(120% 90% at 75% 15%, rgba(201,162,39,0.35), transparent 55%), radial-gradient(80% 70% at 15% 90%, rgba(31,95,91,0.45), transparent 60%)'
+      }} />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(28,26,23,0.65), rgba(28,26,23,0.12) 50%, rgba(28,26,23,0.35))' }} />
       <div style={{ ...wrap, position: 'relative', paddingBottom: 'var(--space-10)', paddingTop: 'calc(var(--nav-h) + var(--space-7))' }}>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.7rem', fontFamily: 'var(--font-body)',
-          fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)' }}>
+        <span style={{
+          display: 'inline-flex', alignItems: 'center', gap: '0.7rem', fontFamily: 'var(--font-body)',
+          fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)'
+        }}>
           <span style={{ width: 30, height: 1, background: 'var(--gold)' }} /> Mavelikkara · Kerala
         </span>
-        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--fs-h1)', fontWeight: 500, lineHeight: 1.02,
-          letterSpacing: 'var(--ls-tight)', color: 'var(--on-dark)', margin: '1.2rem 0 0', maxWidth: '16ch', textWrap: 'balance' }}>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontSize: 'var(--fs-h1)', fontWeight: 500, lineHeight: 1.02,
+          letterSpacing: 'var(--ls-tight)', color: 'var(--on-dark)', margin: '1.2rem 0 0', maxWidth: '16ch', textWrap: 'balance'
+        }}>
           Wearable art, painted by hand.
         </h1>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, color: 'var(--on-dark-soft)',
-          margin: '1.4rem 0 2.2rem', maxWidth: '46ch', textWrap: 'pretty' }}>
+        <p style={{
+          fontFamily: 'var(--font-body)', fontSize: 'var(--fs-lead)', lineHeight: 1.6, color: 'var(--on-dark-soft)',
+          margin: '1.4rem 0 2.2rem', maxWidth: '46ch', textWrap: 'pretty'
+        }}>
           One-of-a-kind shirts and pieces, hand-painted in Kerala — made to order, never repeated.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -37,7 +47,7 @@ function Hero() {
       </div>
       {/* scroll cue */}
       <a href="#philosophy" aria-label="Scroll to philosophy" style={{ position: 'absolute', bottom: '1.6rem', left: '50%', transform: 'translateX(-50%)', color: 'var(--on-dark-soft)' }}>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
       </a>
     </header>
   );
@@ -83,18 +93,24 @@ function CustomCommissionBanner() {
       {/* faint gold wash */}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,162,39,0.12), transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0.85rem', position: 'relative' }}>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+        <span style={{
+          display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
           fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600,
-          letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)' }}>
+          letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)'
+        }}>
           <span style={{ width: 24, height: 1, background: 'var(--gold)', display: 'inline-block' }} />
           Custom Commission
         </span>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 3vw, 2.5rem)',
-          fontWeight: 500, color: '#FAF7F0', margin: 0, lineHeight: 1.08, letterSpacing: '-0.01em' }}>
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(1.7rem, 3vw, 2.5rem)',
+          fontWeight: 500, color: '#FAF7F0', margin: 0, lineHeight: 1.08, letterSpacing: '-0.01em'
+        }}>
           Commission Your Own
         </h3>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-body)', lineHeight: 1.7,
-          color: 'rgba(250,247,240,0.78)', margin: 0, maxWidth: '54ch' }}>
+        <p style={{
+          fontFamily: 'var(--font-body)', fontSize: 'var(--fs-body)', lineHeight: 1.7,
+          color: 'rgba(250,247,240,0.78)', margin: 0, maxWidth: '54ch'
+        }}>
           Any motif — Kathakali, Theyyam, a deity, a peacock, or a memory entirely your own — hand-painted onto your choice of shirt, saree, kurta or kids' wear, made to order just for you.
         </p>
         <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-sm)', fontStyle: 'italic', color: 'rgba(201,162,39,0.75)' }}>
@@ -158,7 +174,8 @@ function Shop() {
                 padding: '0.6rem 1.2rem', cursor: 'pointer', borderRadius: 'var(--radius-pill)',
                 border: `1px solid ${active ? 'var(--gold)' : 'var(--border-strong)'}`,
                 background: active ? 'var(--gold)' : 'transparent', color: active ? 'var(--ink)' : 'var(--text-body)',
-                transition: 'all var(--dur-base) var(--ease-out)' }}>{c}</button>
+                transition: 'all var(--dur-base) var(--ease-out)'
+              }}>{c}</button>
             );
           })}
         </div>
