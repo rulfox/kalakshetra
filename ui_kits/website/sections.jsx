@@ -55,7 +55,6 @@ function Philosophy() {
           <PullQuote author="Dr. Aswathy Sudarsanan" role="Founder · Physician & Textile Artist">
             Every brushstroke carries a little of Kerala into a piece made only for you.
           </PullQuote>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontStyle: 'italic', color: 'var(--accent-strong)' }}>Aswathy</span>
         </div>
       </div>
       <style>{`@media(min-width:880px){.ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}}`}</style>

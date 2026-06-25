@@ -1547,14 +1547,7 @@ function Philosophy() {
   }, /*#__PURE__*/React.createElement(PullQuote, {
     author: "Dr. Aswathy Sudarsanan",
     role: "Founder \xB7 Physician & Textile Artist"
-  }, "Every brushstroke carries a little of Kerala into a piece made only for you."), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: 'var(--font-display)',
-      fontSize: '2rem',
-      fontStyle: 'italic',
-      color: 'var(--accent-strong)'
-    }
-  }, "Aswathy"))), /*#__PURE__*/React.createElement("style", null, `@media(min-width:880px){.ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}}`));
+  }, "Every brushstroke carries a little of Kerala into a piece made only for you."))), /*#__PURE__*/React.createElement("style", null, `@media(min-width:880px){.ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}}`));
 }
 
 /* ----------------------------- SHOP ----------------------------- */
