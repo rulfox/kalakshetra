@@ -134,6 +134,15 @@
         // createElement so they execute, awaiting onload for src scripts to
         // preserve ordering (React before ReactDOM before Babel before text/babel).
         const doc = new DOMParser().parseFromString(template, 'text/html');
+
+        // Copy loading screen style and elements to the new document to prevent a white flash
+        const style = document.querySelector('head style');
+        if (style) doc.head.appendChild(style.cloneNode(true));
+        const thumb = document.getElementById('__bundler_thumbnail');
+        if (thumb) doc.body.appendChild(thumb.cloneNode(true));
+        const loadingEl = document.getElementById('__bundler_loading');
+        if (loadingEl) doc.body.appendChild(loadingEl.cloneNode(true));
+
         document.documentElement.replaceWith(doc.documentElement);
         const dead = Array.from(document.scripts);
         for (const old of dead) {
@@ -158,6 +167,12 @@
         if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
           window.Babel.transformScriptTags();
         }
+
+        // Remove loading screen now that the React app has rendered
+        const newThumb = document.getElementById('__bundler_thumbnail');
+        if (newThumb) newThumb.remove();
+        const newLoading = document.getElementById('__bundler_loading');
+        if (newLoading) newLoading.remove();
       } catch (err) {
         setStatus('Error unpacking: ' + err.message);
         console.error('Bundle unpack error:', err);
