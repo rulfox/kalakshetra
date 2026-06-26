@@ -10,7 +10,7 @@ export function WhatsAppGlyph(props: WhatsAppGlyphProps): JSX.Element;
 export interface WhatsAppButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Product name — builds a per-product pre-filled enquiry message. */
   product?: string | null;
-  /** Override the wa.me number. Default 919400384167. */
+  /** Override the wa.me number. Default 918547516011. */
   number?: string;
   /** Visible label (hidden when floating). Default "Order on WhatsApp". */
   label?: string;

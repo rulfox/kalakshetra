@@ -25,7 +25,7 @@ production code, depending on the need.
 
 ## Non-negotiable brand rules
 - **No cart, no checkout, no prices.** Ordering is a WhatsApp conversation
-  (`wa.me/919400384167` with a per-product pre-filled message). Pricing is enquiry-only.
+  (`wa.me/918547516011` with a per-product pre-filled message). Pricing is enquiry-only.
 - Kasavu **gold is an accent**, never a large fill. Mural accents (temple red, Kathakali
   green, indigo, mustard) stay under ~10% of any surface.
 - Serif (Cormorant Garamond) for display, sans (Inter) for body/UI. Uppercase eyebrows with

@@ -11,4 +11,4 @@ The brand's only purchase affordance — opens a WhatsApp chat with a per-produc
 <WhatsAppButton message="Hi Kalakshetra, do you ship to the UK?" label="Ask a question" />
 ```
 
-`WhatsAppGlyph` is exported separately for use inside other buttons/links. Default number is 919400384167; never display a price anywhere near this CTA.
+`WhatsAppGlyph` is exported separately for use inside other buttons/links. Default number is 918547516011; never display a price anywhere near this CTA.

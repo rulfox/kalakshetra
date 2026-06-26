@@ -9,7 +9,7 @@ export function WhatsAppGlyph({ size = 20, style = {} }) {
   );
 }
 
-const PRIMARY_NUMBER = '919400384167';
+const PRIMARY_NUMBER = '918547516011';
 
 /**
  * Persistent floating WhatsApp order button (brand green, glow shadow).

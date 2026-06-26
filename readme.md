@@ -23,7 +23,7 @@ Sabyasachi** (rich heritage storytelling).
 
 **Confirmed brand facts (use literally):**
 - Location: **Mavelikkara, Alappuzha, Kerala, India**
-- WhatsApp / phone: **9400384167** (primary), **8547516011** (secondary)
+- WhatsApp / phone: **8547516011**
 - Instagram: **@kalakshetra_handpaintings**
 - Painted themes → product names/categories: **Kathakali** faces, **Theyyam** masks &
   crowns, **deities** (Krishna/Guruvayurappan, Ganesha), **peacocks/parrots & temple-mural
@@ -33,7 +33,7 @@ Sabyasachi** (rich heritage storytelling).
 There is **no cart, no checkout, no payment gateway**. The site is a curated gallery that
 converts to a **WhatsApp conversation**:
 - Every product card and a persistent floating button carries an **"Order on WhatsApp"** CTA.
-- CTAs open `https://wa.me/919400384167?text=<url-encoded pre-filled message>` naming the
+- CTAs open `https://wa.me/918547516011?text=<url-encoded pre-filled message>` naming the
   specific product.
 - **Pricing is enquiry-only** — never display prices; price is discussed on WhatsApp.
 - A short "How to Order" strip explains: tap → we confirm size/fabric/price → we hand-paint
