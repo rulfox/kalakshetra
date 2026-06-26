@@ -46,7 +46,27 @@ against the real source of truth. No external links were provided.
 
 ---
 
-## 2. Index / manifest
+## 2. Development setup
+
+### First-time clone — install git hooks
+Run once after cloning the repo:
+```sh
+python scripts/setup-hooks.py
+```
+This installs `scripts/pre-commit` as `.git/hooks/pre-commit`. The hook auto-rebuilds `index.html` whenever you stage changes to `ui_kits/website/sections.jsx` or `_ds_bundle.js`, so the bundle stays in sync without any manual step.
+
+### Making website changes
+Edit `ui_kits/website/sections.jsx` or `_ds_bundle.js` as needed, then:
+```sh
+git add ui_kits/website/sections.jsx _ds_bundle.js   # (whichever you changed)
+git commit -m "your message"   # hook runs _build_index.py and stages index.html automatically
+git push
+```
+See [`scripts/pre-commit`](scripts/pre-commit) and [`_build_index.py`](_build_index.py) for details.
+
+---
+
+## 3. Index / manifest
 
 | Path | What it is |
 |---|---|
@@ -71,7 +91,7 @@ against the real source of truth. No external links were provided.
 
 ---
 
-## 3. CONTENT FUNDAMENTALS — voice & copy
+## 4. CONTENT FUNDAMENTALS — voice & copy
 
 **Overall vibe:** calm, warm, reverent toward craft. Reads like a small atelier speaking
 softly to a discerning guest — never a marketplace shouting deals. Heritage pride without
@@ -112,7 +132,7 @@ Kerala-rooted**. No invented metrics, no fake review counts.
 
 ---
 
-## 4. VISUAL FOUNDATIONS
+## 5. VISUAL FOUNDATIONS
 
 **Color.** Built on a warm **ivory canvas** (`#FAF7F0`) with a secondary **warm white**
 (`#F3EDE2`) for alternating sections. **Kasavu gold** (`#C9A227` / deep `#B8860B`) is the
@@ -168,7 +188,7 @@ favors solid, honest surfaces over heavy glassmorphism.
 
 ---
 
-## 5. ICONOGRAPHY
+## 6. ICONOGRAPHY
 
 The brand is **type- and image-led, not icon-heavy**. Icons are functional and quiet.
 
@@ -183,19 +203,4 @@ The brand is **type- and image-led, not icon-heavy**. Icons are functional and q
 - **No emoji** as icons anywhere. No PNG icon sprites. No decorative unicode glyphs (the only
   non-icon mark used editorially is a thin middot `·` separating stat pills and meta).
 - **Logo:** a **serif wordmark** ("Kalakshetra" in Cormorant Garamond) with the tagline
-  "Hand Painted with Love" set small in uppercase tracked Inter beneath — rendered as live
-  text (see `assets/` + `Wordmark` component), not a raster logo.
-
-**Substitution flagged:** Lucide is used as the UI icon set as a sensible default (no icon
-source was provided in the brief). If the studio has its own icon assets, drop them into
-`assets/icons/` and update this section.
-
----
-
-## 6. Caveats / substitutions
-- **Fonts** are loaded from **Google Fonts CDN** (Cormorant Garamond + Inter). No font
-  binaries were provided; if you need offline/self-hosted fonts, download them and swap
-  `tokens/fonts.css` for local `@font-face` rules.
-- **Imagery** uses warm placeholder blocks — replace with the studio's real product and
-  on-model photography.
-- **Icons:** Lucide substitution flagged above.
+  "Hand Painted with Love" set small in uppercase tracked Inter benea

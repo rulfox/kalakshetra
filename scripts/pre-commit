@@ -1,0 +1,14 @@
+#!/bin/sh
+# Kalakshetra pre-commit hook — auto-rebuilds index.html bundle.
+# Install: python scripts/setup-hooks.py
+ROOT="$(git rev-parse --show-toplevel)"
+if git diff --cached --name-only | grep -qE '(ui_kits/website/sections\.jsx|_ds_bundle\.js)'; then
+  echo "[pre-commit] Source files changed — rebuilding index.html bundle..."
+  python3 "$ROOT/_build_index.py"
+  if [ $? -ne 0 ]; then
+    echo "[pre-commit] ERROR: build failed. Aborting commit."
+    exit 1
+  fi
+  git add "$ROOT/index.html"
+  echo "[pre-commit] index.html staged automatically."
+fi
