@@ -185,7 +185,7 @@ function CustomCommissionBanner() {
 /* ----------------------------- SHOP ----------------------------- */
 const PRODUCTS = [
   { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green', image: 'assets/products/kathakali_masestro.png' },
-  { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red' },
+  { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red', image: 'assets/products/theyyam_crown.png' },
   { name: 'Guruvayurappan', theme: 'Krishna of Guruvayur, in gold & indigo', category: 'Men', tone: 'indigo' },
   { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green', image: 'assets/products/peacock.png' },
   { name: 'Gold Mandala', theme: 'A single Kasavu-gold mandala on ivory', category: 'Women', tone: 'gold' },
