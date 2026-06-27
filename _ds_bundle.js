@@ -706,9 +706,10 @@ function ProductCard({
       position: 'absolute',
       inset: 0,
       display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'rgba(28,26,23,0.34)'
+      alignItems: 'flex-end',
+      justifyContent: 'flex-start',
+      background: 'rgba(28,26,23,0.34)',
+      padding: 'var(--space-5)'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
