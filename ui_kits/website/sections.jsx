@@ -66,25 +66,38 @@ function Hero() {
 /* -------------------------- PHILOSOPHY -------------------------- */
 function Philosophy() {
   return (
-    <section id="philosophy" style={{ ...section, background: 'var(--surface-alt)' }}>
-      <div style={{ ...wrap, display: 'grid', gridTemplateColumns: '1fr', gap: 'var(--space-7)' }} className="ks-two-col">
+    <section id="philosophy" style={{ ...section, background: 'var(--surface-alt)', position: 'relative', overflow: 'hidden' }}>
+      <img
+        src="assets/lord_krishna.png"
+        alt=""
+        aria-hidden="true"
+        className="ks-phil-bg"
+        style={{
+          position: 'absolute', top: 0, right: 0,
+          height: '100%', width: 'auto',
+          objectFit: 'cover', objectPosition: 'top right',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          zIndex: 0,
+        }}
+      />
+      <div style={{ ...wrap, display: 'grid', gridTemplateColumns: '1fr', gap: 'var(--space-7)', position: 'relative', zIndex: 1 }} className="ks-two-col">
+        <SectionHeading eyebrow="The Philosophy"
+          title="Ayurvedic roots, painted by hand"
+          intro="Founded by Dr. Aswathy Sudarsanan — an Ayurvedic physician and textile artist — Kalakshetra carries Kerala's mornings into something you can wear. Each piece is painted slowly, by hand, and never repeated." />
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
-          <SectionHeading eyebrow="The Philosophy"
-            title="Ayurvedic roots, painted by hand"
-            intro="Founded by Dr. Aswathy Sudarsanan — an Ayurvedic physician and textile artist — Kalakshetra carries Kerala's mornings into something you can wear. Each piece is painted slowly, by hand, and never repeated." />
           <PullQuote author="Dr. Aswathy Sudarsanan" role="Founder · Physician & Textile Artist">
             Every brushstroke carries a little of Kerala into a piece made only for you.
           </PullQuote>
         </div>
-        <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-card)' }}>
-          <img
-            src="assets/lord_krishna.png"
-            alt="Guruvayurappan — hand-painted by Kalakshetra"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        </div>
       </div>
-      <style>{`@media(min-width:880px){.ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}}`}</style>
+      <style>{`
+        .ks-phil-bg{opacity:0.1}
+        @media(min-width:880px){
+          .ks-phil-bg{opacity:0.5}
+          .ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}
+        }
+      `}</style>
     </section>
   );
 }
