@@ -184,7 +184,7 @@ function CustomCommissionBanner() {
 
 /* ----------------------------- SHOP ----------------------------- */
 const PRODUCTS = [
-  { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green' },
+  { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green', image: 'assets/products/kathakali_masestro.png' },
   { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red' },
   { name: 'Guruvayurappan', theme: 'Krishna of Guruvayur, in gold & indigo', category: 'Men', tone: 'indigo' },
   { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green' },
@@ -222,7 +222,7 @@ function Shop() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: 'var(--space-6)' }}>
           {list.map((p) => (
             <ProductCard key={p.name} name={p.name} theme={p.theme} category={p.category}
-              categoryTone={p.tone} swatch={p.swatch} comingSoon={p.comingSoon} />
+              categoryTone={p.tone} image={p.image} swatch={p.swatch} comingSoon={p.comingSoon} />
           ))}
         </div>
       </div>
