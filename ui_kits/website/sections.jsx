@@ -9,7 +9,7 @@ const wrap = { maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(-
 const section = { padding: 'var(--space-9) 0' };
 
 /* Placeholder images — swap these src values when real photos arrive */
-const PH_HERO     = 'assets/placeholders/hero.svg';
+const PH_HERO     = 'assets/hero.png';
 const PH_PORTRAIT = 'assets/placeholders/portrait.svg';
 const PH_LOOKBOOK = 'assets/placeholders/lookbook.svg';
 
