@@ -51,7 +51,7 @@ function Hero() {
           One-of-a-kind shirts and pieces, hand-painted in Kerala — made to order, never repeated.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-          <Button as="a" href="#shop" variant="outline" size="lg" style={{ borderColor: 'var(--gold)', color: 'var(--gold)' }}>Discover the Art</Button>
+          <Button as="a" href="#shop" variant="outline" size="lg">Discover the Art</Button>
           <WhatsAppButton style={{ padding: '1.05rem 2rem' }} />
         </div>
       </div>

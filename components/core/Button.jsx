@@ -50,7 +50,7 @@ export function Button({
   const variants = {
     outline: {
       background: hover ? 'var(--gold)' : 'transparent',
-      color: hover ? 'var(--ink)' : 'var(--accent-strong)',
+      color: hover ? 'var(--ink)' : 'var(--gold)',
       borderColor: 'var(--gold)',
     },
     solid: {
