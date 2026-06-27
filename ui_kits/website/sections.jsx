@@ -187,7 +187,7 @@ const PRODUCTS = [
   { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green', image: 'assets/products/kathakali_masestro.png' },
   { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red' },
   { name: 'Guruvayurappan', theme: 'Krishna of Guruvayur, in gold & indigo', category: 'Men', tone: 'indigo' },
-  { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green' },
+  { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green', image: 'assets/products/peacock.png' },
   { name: 'Gold Mandala', theme: 'A single Kasavu-gold mandala on ivory', category: 'Women', tone: 'gold' },
   { name: 'Lotus Whisper', theme: 'New pieces arriving', category: 'Women', tone: 'gold', comingSoon: true },
   { name: 'Little Ganesha', theme: 'Ganesha motif for the smallest canvas', category: 'Kids', tone: 'red' },
