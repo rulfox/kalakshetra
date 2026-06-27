@@ -8,18 +8,28 @@ const { NavBar, Wordmark, WhatsAppButton, WhatsAppGlyph, Button, IconButton,
 const wrap = { maxWidth: 'var(--container)', margin: '0 auto', padding: '0 var(--gutter)' };
 const section = { padding: 'var(--space-9) 0' };
 
+/* Placeholder images — swap these src values when real photos arrive */
+const PH_HERO     = 'assets/placeholders/hero.svg';
+const PH_PORTRAIT = 'assets/placeholders/portrait.svg';
+const PH_LOOKBOOK = 'assets/placeholders/lookbook.svg';
+
 /* ----------------------------- HERO ----------------------------- */
 function Hero() {
   return (
     <header id="top" style={{
       position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'flex-end',
-      background: 'linear-gradient(160deg, #2E3A59 0%, #5C4033 45%, #8B2E2E 100%)', overflow: 'hidden'
+      background: '#1C1A17', overflow: 'hidden'
     }}>
-      {/* painterly wash */}
-      <div style={{
-        position: 'absolute', inset: 0, background:
-          'radial-gradient(120% 90% at 75% 15%, rgba(201,162,39,0.35), transparent 55%), radial-gradient(80% 70% at 15% 90%, rgba(31,95,91,0.45), transparent 60%)'
-      }} />
+      {/* Hero image — replace PH_HERO src with real photo when ready */}
+      <img
+        src={PH_HERO}
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: 'absolute', inset: 0, width: '100%', height: '100%',
+          objectFit: 'cover', objectPosition: 'center', display: 'block',
+        }}
+      />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(28,26,23,0.65), rgba(28,26,23,0.12) 50%, rgba(28,26,23,0.35))' }} />
       <div style={{ ...wrap, position: 'relative', paddingBottom: 'var(--space-10)', paddingTop: 'calc(var(--nav-h) + var(--space-7))' }}>
         <span style={{
@@ -80,18 +90,27 @@ function CustomCommissionBanner() {
   return (
     <div style={{
       position: 'relative', overflow: 'hidden',
-      background: 'linear-gradient(135deg, #2a1a0e 0%, #5C4033 55%, #3a2010 100%)',
+      background: '#2a1a0e',
       borderRadius: 'var(--radius-md)', padding: 'var(--space-7)',
       marginBottom: 'var(--space-7)',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       flexWrap: 'wrap', gap: 'var(--space-6)',
       boxShadow: '0 8px 32px rgba(28,26,23,0.18)',
     }}>
+      {/* Banner image — replace PH_HERO src with real photo when ready */}
+      <img
+        src={PH_HERO}
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: 'absolute', inset: 0, width: '100%', height: '100%',
+          objectFit: 'cover', objectPosition: 'center', display: 'block',
+          pointerEvents: 'none', opacity: 0.35,
+        }}
+      />
       {/* top & bottom gold rule */}
       <div style={{ position: 'absolute', top: 0, left: '8%', right: '8%', height: '1.5px', background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)' }} />
       <div style={{ position: 'absolute', bottom: 0, left: '8%', right: '8%', height: '1.5px', background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)' }} />
-      {/* faint gold wash */}
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,162,39,0.12), transparent 70%)', pointerEvents: 'none' }} />
       <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '0.85rem', position: 'relative' }}>
         <span style={{
           display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
@@ -145,14 +164,14 @@ function CustomCommissionBanner() {
 
 /* ----------------------------- SHOP ----------------------------- */
 const PRODUCTS = [
-  { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green', swatch: 'linear-gradient(150deg,#1F5F5B,#5C4033)' },
-  { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red', swatch: 'linear-gradient(150deg,#8B2E2E,#5C4033)' },
-  { name: 'Guruvayurappan', theme: 'Krishna of Guruvayur, in gold & indigo', category: 'Men', tone: 'indigo', swatch: 'linear-gradient(150deg,#2E3A59,#5C4033)' },
-  { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green', swatch: 'linear-gradient(150deg,#1F5F5B,#2E3A59)' },
-  { name: 'Gold Mandala', theme: 'A single Kasavu-gold mandala on ivory', category: 'Women', tone: 'gold', swatch: 'linear-gradient(150deg,#C9A227,#B05E3B)' },
-  { name: 'Lotus Whisper', theme: 'New pieces arriving', category: 'Women', tone: 'gold', comingSoon: true, swatch: 'linear-gradient(150deg,#B05E3B,#C9A227)' },
-  { name: 'Little Ganesha', theme: 'Ganesha motif for the smallest canvas', category: 'Kids', tone: 'red', swatch: 'linear-gradient(150deg,#D99A2B,#B05E3B)' },
-  { name: 'Parrot & Mango', theme: 'Temple-mural birds in mustard & green', category: 'Kids', tone: 'green', swatch: 'linear-gradient(150deg,#1F5F5B,#D99A2B)' },
+  { name: 'Kathakali Maestro', theme: 'Kathakali face in temple reds & Kathakali green', category: 'Men', tone: 'green' },
+  { name: 'Theyyam Crown', theme: 'Theyyam mask & crown, painted in fire reds', category: 'Men', tone: 'red' },
+  { name: 'Guruvayurappan', theme: 'Krishna of Guruvayur, in gold & indigo', category: 'Men', tone: 'indigo' },
+  { name: 'Peacock (Pattachitra)', theme: 'Temple-mural peacock, brushed by hand', category: 'Men', tone: 'green' },
+  { name: 'Gold Mandala', theme: 'A single Kasavu-gold mandala on ivory', category: 'Women', tone: 'gold' },
+  { name: 'Lotus Whisper', theme: 'New pieces arriving', category: 'Women', tone: 'gold', comingSoon: true },
+  { name: 'Little Ganesha', theme: 'Ganesha motif for the smallest canvas', category: 'Kids', tone: 'red' },
+  { name: 'Parrot & Mango', theme: 'Temple-mural birds in mustard & green', category: 'Kids', tone: 'green' },
 ];
 const CATS = ['All', 'Men', 'Women', 'Kids'];
 
@@ -192,11 +211,12 @@ function Shop() {
 }
 
 /* --------------------------- LOOKBOOK --------------------------- */
+/* replace image values with real lookbook photos when ready */
 const LOOK_SLIDES = [
-  { swatch: 'linear-gradient(135deg,#5C4033,#B05E3B)', eyebrow: 'Worn in Kerala', caption: 'A painted shirt with the set-mundu.' },
-  { swatch: 'linear-gradient(135deg,#1F5F5B,#2E3A59)', eyebrow: 'Pattachitra', caption: 'Temple-mural peacock, brushed by hand.' },
-  { swatch: 'linear-gradient(135deg,#8B2E2E,#5C4033)', eyebrow: 'Kathakali', caption: 'A face of the festival, on cotton.' },
-  { swatch: 'linear-gradient(135deg,#C9A227,#B05E3B)', eyebrow: 'Gold Mandala', caption: 'Kasavu gold, quietly placed.' },
+  { image: PH_LOOKBOOK, alt: 'Lookbook slide 1', eyebrow: 'Worn in Kerala', caption: 'A painted shirt with the set-mundu.' },
+  { image: PH_LOOKBOOK, alt: 'Lookbook slide 2', eyebrow: 'Pattachitra', caption: 'Temple-mural peacock, brushed by hand.' },
+  { image: PH_LOOKBOOK, alt: 'Lookbook slide 3', eyebrow: 'Kathakali', caption: 'A face of the festival, on cotton.' },
+  { image: PH_LOOKBOOK, alt: 'Lookbook slide 4', eyebrow: 'Gold Mandala', caption: 'Kasavu gold, quietly placed.' },
 ];
 function LookbookSection() {
   return (
@@ -215,7 +235,14 @@ function Story() {
   return (
     <section id="story" style={{ ...section, background: 'var(--surface-alt)' }}>
       <div style={{ ...wrap, display: 'grid', gridTemplateColumns: '1fr', gap: 'var(--space-7)' }} className="ks-two-col">
-        <div style={{ aspectRatio: '4 / 5', borderRadius: 'var(--radius-md)', background: 'linear-gradient(150deg,#5C4033,#1F5F5B)', boxShadow: 'var(--shadow-card)' }} aria-label="The Kalakshetra studio in Mavelikkara" role="img" />
+        <div style={{ aspectRatio: '4 / 5', borderRadius: 'var(--radius-md)', overflow: 'hidden', background: 'var(--warm-white)', boxShadow: 'var(--shadow-card)' }}>
+          {/* replace PH_PORTRAIT src with studio photo when ready */}
+          <img
+            src={PH_PORTRAIT}
+            alt="The Kalakshetra studio in Mavelikkara"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
           <SectionHeading eyebrow="Our Story" title="A small studio in Mavelikkara"
             intro="We paint slowly, one piece at a time, in Alappuzha district. No prints, no repeats — only hand and brush on cloth. We ship across India and worldwide." />
@@ -277,9 +304,10 @@ function Footer() {
           { text: 'How to Order', href: '#how-to-order' }
         ]} />
         <FooterCol title="Reach us" links={[
-          { text: 'WhatsApp · 8547516011', href: 'https://wa.me/918547516011', external: true },
-          { text: 'Call · 8547516011', href: 'tel:+918547516011' },
-          { text: '@kalakshetra_handpaintings', href: 'https://www.instagram.com/kalakshetra_handpaintings/', external: true, icon: 'instagram' }
+          { text: 'WhatsApp · 8547516011', href: 'https://wa.me/918547516011', external: true, icon: 'whatsapp' },
+          { text: 'Call · 8547516011', href: 'tel:+918547516011', icon: 'phone' },
+          { text: 'hello@kalakshetrahandpaintings.com', href: 'mailto:hello@kalakshetrahandpaintings.com', icon: 'email' },
+          { text: '@kalakshetra_handpaintings', href: 'https://www.instagram.com/kalakshetra_handpaintings/', external: true, icon: 'instagram' },
         ]} />
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>Newsletter</span>
@@ -299,13 +327,34 @@ function Footer() {
     </footer>
   );
 }
+function FooterIcon({ type }) {
+  if (type === 'whatsapp') return <WhatsAppGlyph size={13} />;
+  if (type === 'phone') return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.5 1.18 2 2 0 012.5.5h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.84 8.06a16 16 0 006.1 6.1l.88-.88a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+    </svg>
+  );
+  if (type === 'email') return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M2 7l10 7 10-7" />
+    </svg>
+  );
+  if (type === 'instagram') return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    </svg>
+  );
+  return null;
+}
+
 function FooterCol({ title, links }) {
   return (
     <nav aria-label={title} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
       <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-eyebrow)', fontWeight: 600, letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', color: 'var(--gold)' }}>{title}</span>
       {links.map((l) => (
         <a key={l.text} href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--fs-sm)', color: 'var(--on-dark-soft)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4em' }}>
-          {l.icon === 'instagram' && <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{flexShrink:0}}><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>}
+          {l.icon && <FooterIcon type={l.icon} />}
           {l.text}
         </a>
       ))}

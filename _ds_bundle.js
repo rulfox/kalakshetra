@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"KalakshetraHandpaintingsDesignSystem_6971f4","components":[{"name":"WhatsAppGlyph","sourcePath":"components/brand/WhatsAppButton.jsx"},{"name":"WhatsAppButton","sourcePath":"components/brand/WhatsAppButton.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"Card","sourcePath":"components/content/Card.jsx"},{"name":"ProductCard","sourcePath":"components/content/ProductCard.jsx"},{"name":"PullQuote","sourcePath":"components/content/PullQuote.jsx"},{"name":"SectionHeading","sourcePath":"components/content/SectionHeading.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"StatPill","sourcePath":"components/core/StatPill.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"NewsletterForm","sourcePath":"components/forms/NewsletterForm.jsx"},{"name":"Lookbook","sourcePath":"components/navigation/Lookbook.jsx"},{"name":"NavBar","sourcePath":"components/navigation/NavBar.jsx"}],"sourceHashes":{"components/brand/WhatsAppButton.jsx":"311587149eb3","components/brand/Wordmark.jsx":"765022345a30","components/content/Card.jsx":"dbaad9fb289b","components/content/ProductCard.jsx":"70f46847fb58","components/content/PullQuote.jsx":"5df77d452efc","components/content/SectionHeading.jsx":"127b3771f5ef","components/core/Button.jsx":"9a174648fc37","components/core/IconButton.jsx":"1297ab8ce2e6","components/core/StatPill.jsx":"d57e7734abe4","components/core/Tag.jsx":"4d77007c29e7","components/forms/Input.jsx":"17774924eebc","components/forms/NewsletterForm.jsx":"482af0ae64bd","components/navigation/Lookbook.jsx":"f985d7f8b94b","components/navigation/NavBar.jsx":"4af9e76c484e","ui_kits/website/sections.jsx":"339fa2440e76"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"KalakshetraHandpaintingsDesignSystem_6971f4","components":[{"name":"WhatsAppGlyph","sourcePath":"components/brand/WhatsAppButton.jsx"},{"name":"WhatsAppButton","sourcePath":"components/brand/WhatsAppButton.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"Card","sourcePath":"components/content/Card.jsx"},{"name":"ProductCard","sourcePath":"components/content/ProductCard.jsx"},{"name":"PullQuote","sourcePath":"components/content/PullQuote.jsx"},{"name":"SectionHeading","sourcePath":"components/content/SectionHeading.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"StatPill","sourcePath":"components/core/StatPill.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"NewsletterForm","sourcePath":"components/forms/NewsletterForm.jsx"},{"name":"Lookbook","sourcePath":"components/navigation/Lookbook.jsx"},{"name":"NavBar","sourcePath":"components/navigation/NavBar.jsx"}],"sourceHashes":{"components/brand/WhatsAppButton.jsx":"311587149eb3","components/brand/Wordmark.jsx":"765022345a30","components/content/Card.jsx":"dbaad9fb289b","components/content/ProductCard.jsx":"70f46847fb58","components/content/PullQuote.jsx":"5df77d452efc","components/content/SectionHeading.jsx":"127b3771f5ef","components/core/Button.jsx":"9a174648fc37","components/core/IconButton.jsx":"1297ab8ce2e6","components/core/StatPill.jsx":"d57e7734abe4","components/core/Tag.jsx":"4d77007c29e7","components/forms/Input.jsx":"17774924eebc","components/forms/NewsletterForm.jsx":"482af0ae64bd","components/navigation/Lookbook.jsx":"f985d7f8b94b","components/navigation/NavBar.jsx":"4af9e76c484e","ui_kits/website/sections.jsx":"6438c87d7925"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -27,7 +27,7 @@ function WhatsAppGlyph({
     d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
   }));
 }
-const PRIMARY_NUMBER = '918547516011';
+const PRIMARY_NUMBER = '919400384167';
 
 /**
  * Persistent floating WhatsApp order button (brand green, glow shadow).
@@ -641,6 +641,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
  *
  * Pricing is enquiry-only — never pass or render a price.
  */
+const CARD_PLACEHOLDER = 'assets/placeholders/portrait.svg';
 function ProductCard({
   name,
   theme,
@@ -649,14 +650,15 @@ function ProductCard({
   // "Men" | "Women" | "Kids"
   categoryTone = 'gold',
   image = null,
-  // image URL; falls back to a warm placeholder swatch
-  swatch = 'linear-gradient(135deg, #C9A227 0%, #B05E3B 55%, #5C4033 100%)',
+  // image URL; falls back to portrait placeholder
+  swatch = 'var(--warm-white)',
   comingSoon = false,
   // "new pieces arriving — enquire" placeholder state
   style = {},
   ...rest
 }) {
   const [hover, setHover] = React.useState(false);
+  const imgSrc = image || CARD_PLACEHOLDER;
   return /*#__PURE__*/React.createElement("article", _extends({
     onMouseEnter: () => setHover(true),
     onMouseLeave: () => setHover(false),
@@ -679,8 +681,8 @@ function ProductCard({
       overflow: 'hidden',
       background: swatch
     }
-  }, image && /*#__PURE__*/React.createElement("img", {
-    src: image,
+  }, /*#__PURE__*/React.createElement("img", {
+    src: imgSrc,
     alt: `${name} — hand-painted ${theme || 'piece'}`,
     loading: "lazy",
     style: {
@@ -706,10 +708,9 @@ function ProductCard({
       position: 'absolute',
       inset: 0,
       display: 'flex',
-      alignItems: 'flex-end',
-      justifyContent: 'flex-start',
-      background: 'rgba(28,26,23,0.34)',
-      padding: 'var(--space-5)'
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'rgba(28,26,23,0.34)'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -718,7 +719,8 @@ function ProductCard({
       fontWeight: 'var(--fw-semibold)',
       letterSpacing: '0.2em',
       textTransform: 'uppercase',
-      color: 'var(--on-dark)'
+      color: 'var(--on-dark)',
+      padding: '0 1rem'
     }
   }, "New pieces arriving \u2014 enquire")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1377,6 +1379,7 @@ Object.assign(__ds_scope, { NavBar });
 
 // ui_kits/website/sections.jsx
 try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* Kalakshetra Handpaintings — website UI-kit sections.
    Composes the design-system primitives from window.<Namespace>. */
 const KS = window.KalakshetraHandpaintingsDesignSystem_6971f4;
@@ -1551,6 +1554,140 @@ function Philosophy() {
   }, "Every brushstroke carries a little of Kerala into a piece made only for you."))), /*#__PURE__*/React.createElement("style", null, `@media(min-width:880px){.ks-two-col{grid-template-columns:1fr 1fr;align-items:center;gap:var(--space-9)}}`));
 }
 
+/* ---------------------- CUSTOM COMMISSION ----------------------- */
+function CustomCommissionBanner() {
+  const waMsg = encodeURIComponent("Hi Kalakshetra, I'd like to commission a custom hand-painted piece. Here's what I have in mind:");
+  const waUrl = `https://wa.me/919400384167?text=${waMsg}`;
+  const [hovered, setHovered] = React.useState(false);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      overflow: 'hidden',
+      background: 'linear-gradient(135deg, #2a1a0e 0%, #5C4033 55%, #3a2010 100%)',
+      borderRadius: 'var(--radius-md)',
+      padding: 'var(--space-7)',
+      marginBottom: 'var(--space-7)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+      gap: 'var(--space-6)',
+      boxShadow: '0 8px 32px rgba(28,26,23,0.18)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 0,
+      left: '8%',
+      right: '8%',
+      height: '1.5px',
+      background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 0,
+      left: '8%',
+      right: '8%',
+      height: '1.5px',
+      background: 'linear-gradient(90deg, transparent, #C9A227 40%, #C9A227 60%, transparent)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: 'radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,162,39,0.12), transparent 70%)',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: '1 1 300px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '0.85rem',
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.6rem',
+      fontFamily: 'var(--font-body)',
+      fontSize: 'var(--fs-eyebrow)',
+      fontWeight: 600,
+      letterSpacing: 'var(--ls-eyebrow)',
+      textTransform: 'uppercase',
+      color: 'var(--gold)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 24,
+      height: 1,
+      background: 'var(--gold)',
+      display: 'inline-block'
+    }
+  }), "Custom Commission"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontSize: 'clamp(1.7rem, 3vw, 2.5rem)',
+      fontWeight: 500,
+      color: '#FAF7F0',
+      margin: 0,
+      lineHeight: 1.08,
+      letterSpacing: '-0.01em'
+    }
+  }, "Commission Your Own"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: 'var(--font-body)',
+      fontSize: 'var(--fs-body)',
+      lineHeight: 1.7,
+      color: 'rgba(250,247,240,0.78)',
+      margin: 0,
+      maxWidth: '54ch'
+    }
+  }, "Any motif \u2014 Kathakali, Theyyam, a deity, a peacock, or a memory entirely your own \u2014 hand-painted onto your choice of shirt, saree, kurta or kids' wear, made to order just for you."), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'var(--font-body)',
+      fontSize: 'var(--fs-sm)',
+      fontStyle: 'italic',
+      color: 'rgba(201,162,39,0.75)'
+    }
+  }, "Share your idea, fabric and size on WhatsApp \u2014 we'll paint it by hand.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: waUrl,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "Request a custom hand-painted piece on WhatsApp",
+    onMouseEnter: () => setHovered(true),
+    onMouseLeave: () => setHovered(false),
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.55rem',
+      padding: '0.95rem 1.9rem',
+      fontFamily: 'var(--font-body)',
+      fontSize: '0.78rem',
+      fontWeight: 600,
+      letterSpacing: '0.13em',
+      textTransform: 'uppercase',
+      textDecoration: 'none',
+      borderRadius: 'var(--radius-pill)',
+      background: hovered ? '#B8860B' : 'var(--gold)',
+      color: '#1C1A17',
+      boxShadow: hovered ? '0 8px 24px rgba(201,162,39,0.45)' : '0 4px 16px rgba(201,162,39,0.25)',
+      transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+      transition: 'all 0.22s cubic-bezier(0.25,0.46,0.45,0.94)',
+      whiteSpace: 'nowrap'
+    }
+  }, /*#__PURE__*/React.createElement(WhatsAppGlyph, {
+    size: 16
+  }), "Request a Custom Piece")));
+}
+
 /* ----------------------------- SHOP ----------------------------- */
 const PRODUCTS = [{
   name: 'Kathakali Maestro',
@@ -1649,7 +1786,7 @@ function Shop() {
         transition: 'all var(--dur-base) var(--ease-out)'
       }
     }, c);
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement(CustomCommissionBanner, null), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
@@ -1772,9 +1909,10 @@ function HowToOrder() {
   }, {
     n: '03',
     t: 'We paint & ship',
-    d: 'Your piece is hand-painted and sent — India & worldwide, UPI / bank.'
+    d: 'Your piece is hand-painted and sent — India & worldwide, COD / UPI / bank.'
   }];
   return /*#__PURE__*/React.createElement("section", {
+    id: "how-to-order",
     style: {
       ...section,
       background: 'var(--surface-page)'
@@ -1841,6 +1979,7 @@ function HowToOrder() {
 function Footer() {
   return /*#__PURE__*/React.createElement("footer", {
     id: "contact",
+    role: "contentinfo",
     style: {
       background: 'var(--ink)',
       color: 'var(--on-dark)',
@@ -1876,10 +2015,33 @@ function Footer() {
     }
   }, "Hand-painted wearable art from Mavelikkara, Alappuzha, Kerala. Made to order, one of a kind.")), /*#__PURE__*/React.createElement(FooterCol, {
     title: "Explore",
-    links: ['Shop', 'Lookbook', 'Our Story', 'How to Order']
+    links: [{
+      text: 'Shop',
+      href: '#shop'
+    }, {
+      text: 'Lookbook',
+      href: '#lookbook'
+    }, {
+      text: 'Our Story',
+      href: '#story'
+    }, {
+      text: 'How to Order',
+      href: '#how-to-order'
+    }]
   }), /*#__PURE__*/React.createElement(FooterCol, {
     title: "Reach us",
-    links: ['WhatsApp · 8547516011', 'Call · 8547516011', '@kalakshetra_handpaintings']
+    links: [{
+      text: 'WhatsApp · 9400384167',
+      href: 'https://wa.me/919400384167',
+      external: true
+    }, {
+      text: 'Call · 8547516011',
+      href: 'tel:+918547516011'
+    }, {
+      text: '@kalakshetra_handpaintings',
+      href: 'https://www.instagram.com/kalakshetra_handpaintings/',
+      external: true
+    }]
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
@@ -1918,7 +2080,7 @@ function Footer() {
       fontSize: 'var(--fs-caption)',
       color: 'var(--on-dark-soft)'
     }
-  }, "We ship: India \xB7 Worldwide \xB7 UPI / Bank"), /*#__PURE__*/React.createElement("span", {
+  }, "We ship: India \xB7 Worldwide \xB7 COD \xB7 UPI / Bank"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: 'var(--font-body)',
       fontSize: 'var(--fs-caption)',
@@ -1930,7 +2092,8 @@ function FooterCol({
   title,
   links
 }) {
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": title,
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1945,15 +2108,20 @@ function FooterCol({
       textTransform: 'uppercase',
       color: 'var(--gold)'
     }
-  }, title), links.map(l => /*#__PURE__*/React.createElement("a", {
-    key: l,
-    href: "#",
+  }, title), links.map(l => /*#__PURE__*/React.createElement("a", _extends({
+    key: l.text,
+    href: l.href
+  }, l.external ? {
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  } : {}, {
     style: {
       fontFamily: 'var(--font-body)',
       fontSize: 'var(--fs-sm)',
-      color: 'var(--on-dark-soft)'
+      color: 'var(--on-dark-soft)',
+      textDecoration: 'none'
     }
-  }, l)));
+  }), l.text)));
 }
 Object.assign(window, {
   Hero,

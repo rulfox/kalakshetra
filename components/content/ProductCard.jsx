@@ -9,18 +9,21 @@ import { WhatsAppButton } from '../brand/WhatsAppButton.jsx';
  *
  * Pricing is enquiry-only — never pass or render a price.
  */
+const CARD_PLACEHOLDER = 'assets/placeholders/portrait.svg';
+
 export function ProductCard({
   name,
   theme,                 // one-line theme description
   category,              // "Men" | "Women" | "Kids"
   categoryTone = 'gold',
-  image = null,          // image URL; falls back to a warm placeholder swatch
-  swatch = 'linear-gradient(135deg, #C9A227 0%, #B05E3B 55%, #5C4033 100%)',
+  image = null,          // image URL; falls back to portrait placeholder
+  swatch = 'var(--warm-white)',
   comingSoon = false,    // "new pieces arriving — enquire" placeholder state
   style = {},
   ...rest
 }) {
   const [hover, setHover] = React.useState(false);
+  const imgSrc = image || CARD_PLACEHOLDER;
 
   return (
     <article
@@ -42,18 +45,16 @@ export function ProductCard({
     >
       {/* Fixed 3:4 media box — no layout shift */}
       <div style={{ position: 'relative', aspectRatio: '3 / 4', overflow: 'hidden', background: swatch }}>
-        {image && (
-          <img
-            src={image}
-            alt={`${name} — hand-painted ${theme || 'piece'}`}
-            loading="lazy"
-            style={{
-              width: '100%', height: '100%', objectFit: 'cover',
-              transform: hover ? 'scale(1.05)' : 'scale(1)',
-              transition: 'transform var(--dur-slow) var(--ease-out)',
-            }}
-          />
-        )}
+        <img
+          src={imgSrc}
+          alt={`${name} — hand-painted ${theme || 'piece'}`}
+          loading="lazy"
+          style={{
+            width: '100%', height: '100%', objectFit: 'cover',
+            transform: hover ? 'scale(1.05)' : 'scale(1)',
+            transition: 'transform var(--dur-slow) var(--ease-out)',
+          }}
+        />
         {/* category tag, top-left */}
         {category && (
           <div style={{ position: 'absolute', top: '0.9rem', left: '0.9rem' }}>
@@ -68,6 +69,7 @@ export function ProductCard({
             <span style={{
               fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 'var(--fw-semibold)',
               letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--on-dark)',
+              padding: '0 1rem',
             }}>New pieces arriving — enquire</span>
           </div>
         )}
