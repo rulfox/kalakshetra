@@ -58,7 +58,10 @@ export default async function LookbookPage() {
 
       <div className="ks-card" style={{ maxWidth: 480 }}>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', margin: '0 0 1rem' }}>Add a slide</h2>
-        <SlideForm action={createSlide} />
+        {/* key forces a fresh instance (and fresh ImageUploadField state) once the add succeeds
+            and the slides list grows — React 19's post-action form auto-reset only resets
+            uncontrolled inputs, not the controlled imageUrl/s3Key hidden inputs. */}
+        <SlideForm key={slides.length} action={createSlide} />
       </div>
     </div>
   );
@@ -70,7 +73,7 @@ function SlideForm({ action, initial }: { action: (formData: FormData) => void; 
   const uid = initial ? `slide-${initial.id}` : 'slide-new';
   return (
     <form action={action} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
-      <ImageUploadField kind="lookbook" initialImageUrl={initial?.imageUrl} />
+      <ImageUploadField kind="lookbook" aspectRatio={16 / 9} initialImageUrl={initial?.imageUrl} />
       <div>
         <label htmlFor={`${uid}-eyebrow`}>Eyebrow label</label>
         <input id={`${uid}-eyebrow`} name="eyebrow" type="text" defaultValue={initial?.eyebrow ?? ''} placeholder="e.g. Worn in Kerala" />
