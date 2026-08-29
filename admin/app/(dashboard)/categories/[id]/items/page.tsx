@@ -40,7 +40,10 @@ export default async function ItemsPage({ params }: { params: Promise<{ id: stri
 
       <div className="ks-card" style={{ maxWidth: 480 }}>
         <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', margin: '0 0 1rem' }}>Add an item</h2>
-        <ItemForm action={createItem.bind(null, categoryId)} />
+        {/* key forces a fresh instance (and fresh ImageUploadField state) once the add succeeds
+            and the items list grows — React 19's post-action form auto-reset only resets
+            uncontrolled inputs, not the controlled imageUrl/s3Key hidden inputs. */}
+        <ItemForm key={items.length} action={createItem.bind(null, categoryId)} />
       </div>
     </div>
   );
@@ -126,7 +129,7 @@ function ItemForm({ action, initial }: { action: (formData: FormData) => void; i
           ))}
         </select>
       </div>
-      <ImageUploadField kind="items" initialImageUrl={initial?.imageUrl} initialS3Key={undefined} />
+      <ImageUploadField kind="items" aspectRatio={3 / 4} initialImageUrl={initial?.imageUrl} initialS3Key={undefined} />
       <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'none' }}>
         <input type="checkbox" name="comingSoon" defaultChecked={initial?.comingSoon} style={{ width: 'auto' }} />
         Coming soon

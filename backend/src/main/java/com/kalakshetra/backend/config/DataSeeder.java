@@ -13,19 +13,20 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Dev-only seed data that mirrors, verbatim, what is hardcoded today in
+ * Seed data that mirrors, verbatim, what was hardcoded before this migration in
  * {@code ui_kits/website/sections.jsx} (PRODUCTS, LOOK_SLIDES, and every editorial string) plus
  * every {@link SiteContentKeys} default. This *is* the "migrate hardcoded content into the DB"
- * step — running the backend locally with the {@code dev} profile serves an API that reproduces
- * today's live site content exactly.
+ * step. Each seed method is idempotent (skips once its table is non-empty), so it runs safely on
+ * every boot in every environment — including prod, where {@code site_content} otherwise stays
+ * empty forever (the public API's grouped response falls back to these same defaults, which
+ * makes an unseeded prod deployment look fine publicly while the admin editor has nothing to
+ * list).
  */
 @Component
-@Profile("dev")
 public class DataSeeder implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(DataSeeder.class);
