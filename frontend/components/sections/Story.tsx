@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { StatPill } from '@/components/ui/StatPill';
+import { resolveImageUrl } from '@/lib/api';
 import type { SiteContentGroups } from '@/lib/types';
 import { wrap, section } from './layout';
 
@@ -19,7 +20,7 @@ export function Story({ content }: { content: SiteContentGroups['story'] }) {
           }}
         >
           <Image
-            src="/assets/placeholders/portrait.svg"
+            src={resolveImageUrl(content.imageUrl) || '/assets/placeholders/portrait.svg'}
             alt="The Kalakshetra studio in Mavelikkara"
             fill
             sizes="(max-width: 880px) 100vw, 600px"

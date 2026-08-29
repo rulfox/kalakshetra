@@ -169,18 +169,28 @@ public class DataSeeder implements CommandLineRunner {
                 .build();
     }
 
+    /**
+     * Per-key, not per-table: inserts only keys not already present, so adding a new
+     * {@link SiteContentKeys.Def} later (e.g. a new group's image field) gets seeded on the next
+     * boot even in an environment whose site_content table is already populated — an
+     * all-or-nothing {@code count() > 0} check would silently skip it forever.
+     */
     private void seedSiteContent() {
-        if (siteContentRepository.count() > 0) {
-            return;
-        }
+        int inserted = 0;
         for (SiteContentKeys.Def def : SiteContentKeys.ALL) {
+            if (siteContentRepository.findByKey(def.key()).isPresent()) {
+                continue;
+            }
             siteContentRepository.save(com.kalakshetra.backend.domain.SiteContent.builder()
                     .key(def.key())
                     .value(def.defaultValue())
                     .label(def.label())
                     .group(def.group())
                     .build());
+            inserted++;
         }
-        log.info("Seeded {} site-content entries with today's default copy", SiteContentKeys.ALL.size());
+        if (inserted > 0) {
+            log.info("Seeded {} new site-content entries with their default copy", inserted);
+        }
     }
 }

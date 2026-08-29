@@ -45,6 +45,7 @@ export interface SiteContentGroups {
   };
   commission: { eyebrow: string; title: string; body: string; footnote: string };
   story: {
+    imageUrl: string;
     eyebrow: string;
     title: string;
     intro: string;
