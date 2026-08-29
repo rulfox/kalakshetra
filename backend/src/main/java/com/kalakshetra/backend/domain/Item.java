@@ -41,7 +41,7 @@ public class Item extends AuditedEntity {
     private String imageAlt;
 
     /** S3 object key, kept so we can delete the object when the image is replaced/record removed. */
-    @Column(length = 500)
+    @Column(name = "s3_key", length = 500)
     private String s3Key;
 
     /** Tag accent color on the product card: gold | red | green | indigo. */

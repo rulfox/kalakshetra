@@ -2,7 +2,6 @@ package com.kalakshetra.backend.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,8 +26,7 @@ public class SiteContent extends AuditedEntity {
     @Column(name = "content_key", nullable = false, unique = true, length = 120)
     private String key;
 
-    @Lob
-    @Column(name = "content_value", nullable = false)
+    @Column(name = "content_value", nullable = false, columnDefinition = "TEXT")
     private String value;
 
     @Column(nullable = false, length = 150)
