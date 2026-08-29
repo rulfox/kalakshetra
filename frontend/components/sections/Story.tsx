@@ -23,6 +23,7 @@ export function Story({ content }: { content: SiteContentGroups['story'] }) {
             src={resolveImageUrl(content.imageUrl) || '/assets/placeholders/portrait.svg'}
             alt="The Kalakshetra studio in Mavelikkara"
             fill
+            unoptimized
             sizes="(max-width: 880px) 100vw, 600px"
             style={{ objectFit: 'cover' }}
           />
