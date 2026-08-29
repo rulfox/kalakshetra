@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb-${random.uuid};DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: test-secret-key-at-least-32-bytes-long-please
+    access-token-ttl-seconds: 3600
+    refresh-token-ttl-seconds: 2592000
+  cors:
+    public-allowed-origins: http://localhost:3000
+    admin-allowed-origins: http://localhost:3100
+  s3:
+    bucket: test-bucket
+    region: ap-south-1
+    public-base-url: https://test-bucket.s3.ap-south-1.amazonaws.com
+    presign-expiry-seconds: 300
+  revalidation:
+    enabled: false
+  admin-bootstrap:
+    username: testadmin
+    password: testpassword123
+    display-name: Test Admin

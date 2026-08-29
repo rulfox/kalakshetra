@@ -1,0 +1,61 @@
+/* Kalakshetra Handpaintings — Color tokens
+   Palette: Kerala Kasavu + heritage earth tones.
+   Mural accents are used sparingly (<10% of any surface). */
+:root {
+  /* ---- Base / canvas ---- */
+  --ivory: #FAF7F0;          /* primary page canvas */
+  --warm-white: #F3EDE2;     /* secondary surface, alternating sections */
+
+  /* ---- Primary metallic (Kasavu gold) ---- */
+  --gold: #C9A227;           /* primary gold — borders, accents, CTA outline */
+  --gold-deep: #B8860B;      /* deeper gold — hover, emphasis */
+
+  /* ---- Earth neutrals ---- */
+  --wood: #5C4033;           /* Ettukettu wood — dark sections, headings on light */
+  --terracotta: #B05E3B;     /* warm secondary accent */
+
+  /* ---- Mural accents (use sparingly) ---- */
+  --temple-red: #8B2E2E;
+  --kathakali-green: #1F5F5B;
+  --indigo: #2E3A59;
+  --mustard: #D99A2B;
+
+  /* ---- Ink / text ---- */
+  --ink: #1C1A17;            /* near-black text on light */
+  --ink-soft: #4A453E;       /* muted body text */
+  --ink-faint: #8C857A;      /* captions, meta, placeholders */
+  --on-dark: #FAF7F0;        /* ivory text on dark surfaces */
+  --on-dark-soft: #D8CFC0;   /* muted text on dark */
+
+  /* ---- WhatsApp (order CTA) ---- */
+  --whatsapp: #25D366;       /* brand green, used on floating button */
+  --whatsapp-ink: #1F7A4D;   /* accessible green for text/solid buttons */
+
+  /* ---- Lines & dividers ---- */
+  --hairline: rgba(28, 26, 23, 0.12);
+  --hairline-strong: rgba(28, 26, 23, 0.22);
+  --gold-hairline: rgba(201, 162, 39, 0.45);
+
+  /* ============ Semantic aliases ============ */
+  --surface-page: var(--ivory);
+  --surface-alt: var(--warm-white);
+  --surface-card: #FFFFFF;
+  --surface-dark: var(--wood);
+  --surface-inverse: var(--ink);
+
+  --text-strong: var(--ink);
+  --text-body: var(--ink-soft);
+  --text-muted: var(--ink-faint);
+  --text-on-dark: var(--on-dark);
+  --text-on-dark-muted: var(--on-dark-soft);
+
+  --accent: var(--gold);
+  --accent-strong: var(--gold-deep);
+  --accent-warm: var(--terracotta);
+
+  --border-subtle: var(--hairline);
+  --border-strong: var(--hairline-strong);
+  --border-gold: var(--gold-hairline);
+
+  --focus-ring: var(--gold-deep);
+}

@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: backend
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-change-me-please-32chars-min}
+    access-token-ttl-seconds: 3600
+    refresh-token-ttl-seconds: 2592000
+  cors:
+    public-allowed-origins: ${PUBLIC_SITE_ORIGINS:http://localhost:3000}
+    admin-allowed-origins: ${ADMIN_PORTAL_ORIGINS:http://localhost:3100}
+  s3:
+    bucket: ${AWS_S3_BUCKET:kalakshetra-dev-bucket}
+    region: ${AWS_REGION:ap-south-1}
+    public-base-url: ${AWS_S3_PUBLIC_BASE_URL:https://kalakshetra-dev-bucket.s3.ap-south-1.amazonaws.com}
+    presign-expiry-seconds: 300
+  revalidation:
+    enabled: ${REVALIDATION_ENABLED:false}
+    url: ${NEXTJS_REVALIDATE_URL:}
+    secret: ${NEXTJS_REVALIDATE_SECRET:}
+  admin-bootstrap:
+    username: ${ADMIN_BOOTSTRAP_USERNAME:}
+    password: ${ADMIN_BOOTSTRAP_PASSWORD:}
+    display-name: ${ADMIN_BOOTSTRAP_DISPLAY_NAME:Studio Admin}

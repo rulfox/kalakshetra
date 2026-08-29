@@ -1,0 +1,14 @@
+# Railway production profile. Railway's Postgres plugin injects PGHOST/PGPORT/PGDATABASE/
+# PGUSER/PGPASSWORD individually — mapped here rather than parsing its DATABASE_URL, which
+# uses a postgres:// scheme the JDBC driver doesn't accept directly.
+spring:
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
