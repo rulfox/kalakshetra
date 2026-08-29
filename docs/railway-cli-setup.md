@@ -40,30 +40,47 @@ This creates three empty services in the project (no source yet — that's `up`,
 
 ## 4. Set each service's environment variables
 
-Generate a JWT secret and pick your two domains before running these:
+Generate a JWT secret and pick your two domains before running these. macOS/Linux:
 
 ```sh
 JWT_SECRET=$(openssl rand -base64 48)
+```
 
+Windows PowerShell (`VAR=$(cmd)` is bash syntax and won't work in PowerShell — use this
+instead, or generate the value some other way and paste it directly into the `railway variable
+set` command below):
+
+```powershell
+$JWT_SECRET = [Convert]::ToBase64String([System.Security.Cryptography.RandomNumberGenerator]::GetBytes(48))
+```
+
+Either way, the `railway variable set` commands themselves are identical on both platforms —
+they're just invoking `railway.exe`/`railway` with arguments, nothing shell-specific:
+
+Values that contain `+`, `/`, `=`, spaces, or other punctuation (secrets, base64 strings, the AWS
+secret key) should be wrapped in double quotes with the whole `KEY=VALUE` pair inside — that form
+works unchanged in both bash and PowerShell:
+
+```sh
 railway variable set SPRING_PROFILES_ACTIVE=prod --service backend --skip-deploys
-railway variable set JWT_SECRET="$JWT_SECRET" --service backend --skip-deploys
+railway variable set "JWT_SECRET=$JWT_SECRET" --service backend --skip-deploys
 railway variable set ADMIN_BOOTSTRAP_USERNAME=<studio-owner-username> --service backend --skip-deploys
 railway variable set ADMIN_BOOTSTRAP_PASSWORD=<a-strong-password> --service backend --skip-deploys
 railway variable set PUBLIC_SITE_ORIGINS=https://kalakshetrahandpaintings.com --service backend --skip-deploys
 railway variable set ADMIN_PORTAL_ORIGINS=https://admin.kalakshetrahandpaintings.com --service backend --skip-deploys
 railway variable set NEXTJS_REVALIDATE_URL=https://kalakshetrahandpaintings.com/api/revalidate --service backend --skip-deploys
-railway variable set NEXTJS_REVALIDATE_SECRET=<shared-secret> --service backend --skip-deploys
+railway variable set "NEXTJS_REVALIDATE_SECRET=<shared-secret>" --service backend --skip-deploys
 railway variable set REVALIDATION_ENABLED=true --service backend --skip-deploys
 # AWS_* vars: only after completing backend/docs/aws-setup.md (needs a real AWS account)
 railway variable set AWS_ACCESS_KEY_ID=<from-aws-setup> --service backend --skip-deploys
-railway variable set AWS_SECRET_ACCESS_KEY=<from-aws-setup> --service backend --skip-deploys
+railway variable set "AWS_SECRET_ACCESS_KEY=<from-aws-setup>" --service backend --skip-deploys
 railway variable set AWS_REGION=ap-south-1 --service backend --skip-deploys
 railway variable set AWS_S3_BUCKET=kalakshetra-handpaintings-media --service backend --skip-deploys
 railway variable set AWS_S3_PUBLIC_BASE_URL=https://kalakshetra-handpaintings-media.s3.ap-south-1.amazonaws.com --service backend --skip-deploys
 
 railway variable set NEXT_PUBLIC_SITE_URL=https://kalakshetrahandpaintings.com --service frontend --skip-deploys
 railway variable set NEXT_PUBLIC_S3_PUBLIC_BASE_URL=https://kalakshetra-handpaintings-media.s3.ap-south-1.amazonaws.com --service frontend --skip-deploys
-railway variable set REVALIDATE_SECRET=<shared-secret> --service frontend --skip-deploys
+railway variable set "REVALIDATE_SECRET=<shared-secret>" --service frontend --skip-deploys
 # NEXT_PUBLIC_API_BASE_URL is set in step 6, once the backend's URL is known
 
 railway variable set BACKEND_API_BASE_URL=<set-in-step-6> --service admin --skip-deploys
@@ -74,10 +91,28 @@ values are saved regardless.)
 
 ## 5. Deploy each service from its own directory
 
+macOS/Linux, or PowerShell 7+ (`pwsh`):
+
 ```sh
 cd backend  && railway up --service backend  --detach --ci && cd ..
 cd frontend && railway up --service frontend --detach --ci && cd ..
 cd admin    && railway up --service admin    --detach --ci && cd ..
+```
+
+Windows PowerShell 5.1 (the default `powershell.exe`) doesn't support `&&` chaining — run each
+line separately instead, or use semicolons (which don't short-circuit on failure, so check each
+command's output before moving to the next):
+
+```powershell
+cd backend
+railway up --service backend --detach --ci
+cd ..
+cd frontend
+railway up --service frontend --detach --ci
+cd ..
+cd admin
+railway up --service admin --detach --ci
+cd ..
 ```
 
 `--ci` streams build logs and exits when the build finishes (doesn't wait for the health check).
@@ -95,8 +130,13 @@ railway domain --service backend --json          # or set a custom api.kalakshet
 # copy the resulting URL, then:
 railway variable set NEXT_PUBLIC_API_BASE_URL=<backend-url> --service frontend --skip-deploys
 railway variable set BACKEND_API_BASE_URL=<backend-url> --service admin --skip-deploys
+```
 
-# NEXT_PUBLIC_* vars are baked in at build time, so frontend needs a rebuild to pick it up:
+`NEXT_PUBLIC_*` vars are baked in at build time, so `frontend` needs a rebuild to pick it up
+(macOS/Linux/pwsh 7+ shown; on Windows PowerShell 5.1, run each `cd`/`railway up` pair as
+separate lines like in step 5):
+
+```sh
 cd frontend && railway up --service frontend --detach --ci && cd ..
 cd admin    && railway up --service admin    --detach --ci && cd ..
 ```
