@@ -1,0 +1,20 @@
+/* Design tokens, copied+adapted from the repo-root design-system package
+   (tokens/*.css) — that package stays the untouched source of truth; these
+   are a point-in-time copy so this app has no build-time coupling to it. */
+@import '../styles/tokens/colors.css';
+@import '../styles/tokens/typography.css';
+@import '../styles/tokens/spacing.css';
+@import '../styles/tokens/base.css';
+
+/* Font loading here is next/font (see app/layout.tsx), not the runtime Google
+   Fonts <link> the original site used — this is what lets fonts render in the
+   very first server response instead of popping in after a client fetch. The
+   font family names/fallback stacks match tokens/typography.css exactly. */
+:root {
+  --font-serif: var(--font-cormorant), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  color-scheme: light;
+}

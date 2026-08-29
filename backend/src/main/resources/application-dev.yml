@@ -1,0 +1,27 @@
+# Local development profile — no Docker/Postgres required.
+# Run with: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/kalakshetra;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: false
+  h2:
+    console:
+      enabled: true
+
+# Dev-only default admin login (do NOT rely on these in prod — prod requires
+# ADMIN_BOOTSTRAP_USERNAME/ADMIN_BOOTSTRAP_PASSWORD to be set explicitly).
+app:
+  admin-bootstrap:
+    username: ${ADMIN_BOOTSTRAP_USERNAME:admin}
+    password: ${ADMIN_BOOTSTRAP_PASSWORD:dev-admin-password}
