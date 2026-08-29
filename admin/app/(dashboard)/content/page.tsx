@@ -2,6 +2,7 @@ import { backendFetch } from '@/lib/backendClient';
 import { ImageUploadField } from '@/components/ImageUploadField';
 import type { SiteContentEntry } from '@/lib/types';
 import { saveContentGroup } from './actions';
+import { SiteContentForm } from './SiteContentForm';
 
 /** Groups that have an editable image (stored as `{group}.imageUrl` / `{group}.imageS3Key`),
  * with the crop ratio matching where that image renders on the public site. */
@@ -44,12 +45,12 @@ export default async function ContentPage() {
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', margin: '0 0 1rem' }}>
             {GROUP_LABELS[group] || group}
           </h2>
-          <form
+          <SiteContentForm
             action={saveContentGroup.bind(
               null,
               groupEntries.map((e) => e.key),
             )}
-            style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}
+            groupLabel={GROUP_LABELS[group] || group}
           >
             {groupEntries.map((entry) => {
               const fieldName = entry.key.substring(entry.key.indexOf('.') + 1);
@@ -84,10 +85,7 @@ export default async function ContentPage() {
                 </div>
               );
             })}
-            <button className="ks-btn" type="submit" style={{ alignSelf: 'flex-start' }}>
-              Save {GROUP_LABELS[group]?.toLowerCase() || group}
-            </button>
-          </form>
+          </SiteContentForm>
         </div>
       ))}
     </div>
