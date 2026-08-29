@@ -65,6 +65,7 @@ export function ProductCard({
           src={imgSrc}
           alt={`${name} — hand-painted ${theme || 'piece'}`}
           fill
+          unoptimized
           sizes="(max-width: 700px) 50vw, 300px"
           style={{ objectFit: 'cover', transform: hover ? 'scale(1.05)' : 'scale(1)', transition: 'transform var(--dur-slow) var(--ease-out)' }}
         />

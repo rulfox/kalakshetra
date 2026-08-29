@@ -1,6 +1,13 @@
 import { backendFetch } from '@/lib/backendClient';
+import { ImageUploadField } from '@/components/ImageUploadField';
 import type { SiteContentEntry } from '@/lib/types';
 import { saveContentGroup } from './actions';
+
+/** Groups that have an editable image (stored as `{group}.imageUrl` / `{group}.imageS3Key`),
+ * with the crop ratio matching where that image renders on the public site. */
+const GROUP_IMAGE_ASPECT: Record<string, number> = {
+  story: 4 / 5,
+};
 
 const GROUP_LABELS: Record<string, string> = {
   hero: 'Hero',
@@ -46,6 +53,25 @@ export default async function ContentPage() {
           >
             {groupEntries.map((entry) => {
               const fieldName = entry.key.substring(entry.key.indexOf('.') + 1);
+
+              // S3 key rides along with its imageUrl field's upload widget — no separate row.
+              if (fieldName === 'imageS3Key') return null;
+
+              if (fieldName === 'imageUrl' && GROUP_IMAGE_ASPECT[group] !== undefined) {
+                const s3KeyEntry = groupEntries.find((e) => e.key === `${group}.imageS3Key`);
+                return (
+                  <ImageUploadField
+                    key={entry.key}
+                    kind="site"
+                    aspectRatio={GROUP_IMAGE_ASPECT[group]}
+                    initialImageUrl={entry.value}
+                    initialS3Key={s3KeyEntry?.value}
+                    imageUrlFieldName={entry.key}
+                    s3KeyFieldName={`${group}.imageS3Key`}
+                  />
+                );
+              }
+
               const long = LONG_FIELDS.has(fieldName);
               return (
                 <div key={entry.key}>

@@ -44,6 +44,8 @@ public final class SiteContentKeys {
                     "commission",
                     "Tell us your theme and we'll hand-paint it just for you."),
             new Def("commission.footnote", "Footnote", "commission", "Price on enquiry."),
+            new Def("story.imageUrl", "Studio photo", "story", "/assets/placeholders/portrait.svg"),
+            new Def("story.imageS3Key", "Studio photo S3 key", "story", ""),
             new Def("story.eyebrow", "Eyebrow", "story", "Our Story"),
             new Def("story.title", "Title", "story", "Slow craft, from Kerala to your wardrobe"),
             new Def(

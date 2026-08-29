@@ -30,6 +30,7 @@ const FALLBACK_SITE_CONTENT: SiteContentGroups = {
     footnote: 'Price on enquiry.',
   },
   story: {
+    imageUrl: '/assets/placeholders/portrait.svg',
     eyebrow: 'Our Story',
     title: 'Slow craft, from Kerala to your wardrobe',
     intro:

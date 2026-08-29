@@ -7,11 +7,15 @@ import type { PresignResponse } from '@/lib/types';
 import { getCroppedImageBlob } from '@/lib/cropImage';
 
 interface ImageUploadFieldProps {
-  kind: 'items' | 'lookbook' | 'categories';
+  kind: 'items' | 'lookbook' | 'categories' | 'site';
   /** Crop ratio (width / height) — e.g. 3/4 for product cards, 16/9 for lookbook slides. */
   aspectRatio: number;
   initialImageUrl?: string | null;
   initialS3Key?: string | null;
+  /** Hidden-input names the surrounding form reads on submit — override when embedding this
+   * field inside a generic form that expects namespaced keys (e.g. "story.imageUrl"). */
+  imageUrlFieldName?: string;
+  s3KeyFieldName?: string;
 }
 
 /**
@@ -22,7 +26,14 @@ interface ImageUploadFieldProps {
  * cropped blob is PUT to S3, and the resulting public URL/key is stashed in hidden inputs so the
  * surrounding <form action={serverAction}> submits them like any other field.
  */
-export function ImageUploadField({ kind, aspectRatio, initialImageUrl = null, initialS3Key = null }: ImageUploadFieldProps) {
+export function ImageUploadField({
+  kind,
+  aspectRatio,
+  initialImageUrl = null,
+  initialS3Key = null,
+  imageUrlFieldName = 'imageUrl',
+  s3KeyFieldName = 's3Key',
+}: ImageUploadFieldProps) {
   const [imageUrl, setImageUrl] = useState(initialImageUrl || '');
   const [s3Key, setS3Key] = useState(initialS3Key || '');
   const [status, setStatus] = useState<'idle' | 'cropping' | 'uploading' | 'error'>('idle');
@@ -92,7 +103,9 @@ export function ImageUploadField({ kind, aspectRatio, initialImageUrl = null, in
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <label htmlFor={inputId}>Image</label>
-      {imageUrl && (
+      {/* Some default site-content values are relative asset paths that only exist on the
+       * public frontend, not here — only preview once it's a real uploaded (absolute) URL. */}
+      {imageUrl && imageUrl.startsWith('http') && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={imageUrl}
@@ -109,8 +122,8 @@ export function ImageUploadField({ kind, aspectRatio, initialImageUrl = null, in
       <input ref={fileInputRef} id={inputId} type="file" accept="image/*" onChange={onFileChange} />
       {status === 'uploading' && <span style={{ fontSize: 'var(--fs-caption)', color: 'var(--text-muted)' }}>Uploading…</span>}
       {status === 'error' && <span style={{ fontSize: 'var(--fs-caption)', color: 'var(--temple-red)' }}>Upload failed — try again.</span>}
-      <input type="hidden" name="imageUrl" value={imageUrl} readOnly />
-      <input type="hidden" name="s3Key" value={s3Key} readOnly />
+      <input type="hidden" name={imageUrlFieldName} value={imageUrl} readOnly />
+      <input type="hidden" name={s3KeyFieldName} value={s3Key} readOnly />
 
       {status === 'cropping' && rawImageSrc && (
         <div

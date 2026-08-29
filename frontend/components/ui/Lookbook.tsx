@@ -90,6 +90,7 @@ export function Lookbook({
                     src={s.image}
                     alt={s.alt || s.caption || 'Lookbook image'}
                     fill
+                    unoptimized
                     sizes="(max-width: 900px) 100vw, 1200px"
                     style={{ objectFit: 'cover' }}
                     priority={i === 0}

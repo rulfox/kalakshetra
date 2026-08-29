@@ -15,17 +15,17 @@ export function loadImage(src: string): Promise<HTMLImageElement> {
 }
 
 /**
- * Extracts the cropped rect onto a canvas and exports it as a JPEG blob. Capped only at
- * maxDimension (default matches the largest width the site's <Image> srcSet ever requests),
- * so real photos are never downscaled below what the site would use at full size.
+ * Extracts the cropped rect onto a canvas and exports it as a JPEG blob at the crop's native
+ * pixel resolution — no downscale, quality 1 (max) — so the uploaded file carries the same
+ * clarity as the source photo, only cropped to the target aspect ratio.
  */
 export async function getCroppedImageBlob(
   imageSrc: string,
   cropPixels: PixelCrop,
   opts?: { maxDimension?: number; quality?: number },
 ): Promise<Blob> {
-  const maxDimension = opts?.maxDimension ?? 3840;
-  const quality = opts?.quality ?? 0.92;
+  const maxDimension = opts?.maxDimension ?? Infinity;
+  const quality = opts?.quality ?? 1;
 
   const image = await loadImage(imageSrc);
 
