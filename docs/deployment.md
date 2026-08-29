@@ -4,6 +4,10 @@ Three separate Railway services, one shared Postgres plugin. None of this was ru
 the build session — no real Railway/AWS credentials were available there (only sandbox
 placeholders) — so this is the checklist for you to run once, by hand or via the Railway CLI.
 
+For exact, copy-paste `railway` CLI commands (dashboard clicks not required), see
+[`railway-cli-setup.md`](./railway-cli-setup.md). This page is the reference for *what* each
+service needs; that one is *how* to actually run it.
+
 ## 1. `backend` service
 
 - Deploy from `backend/` (Dockerfile present — Railway auto-detects it).
